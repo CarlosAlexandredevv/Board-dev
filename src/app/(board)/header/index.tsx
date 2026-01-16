@@ -3,7 +3,7 @@ import { UserButton } from './user-button';
 
 export function Header() {
   return (
-    <header className="max-w-[900px] mx-auto w-full flex items-center justify-between">
+    <header className="max-w-[900px] mx-auto w-full flex flex-col sm:flex-row gap-4 sm:gap-0 items-start sm:items-center justify-between">
       <div className="space-y-1">
         <h1 className="font-semibold text-xl">Product Roadmap</h1>
         <p className="text-sm text-navy-100">
@@ -11,7 +11,7 @@ export function Header() {
         </p>
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 md:gap-4 w-full sm:w-auto">
         <SearchInput />
 
         <UserButton />
