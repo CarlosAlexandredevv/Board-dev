@@ -2,6 +2,11 @@ import { ArchiveIcon, ThumbsUpIcon, MessageCircleIcon } from 'lucide-react';
 import { Section } from '@/components/section';
 import { Card } from '@/components/card';
 import { Button } from '@/components/button';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Board',
+};
 
 interface BoardProps {
   searchParams: Promise<{
