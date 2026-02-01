@@ -1,5 +1,6 @@
 import { SearchInput } from './search-input';
 import { UserButton } from '../../../components/header/user-button';
+import { Suspense } from 'react';
 
 export function Header() {
   return (
@@ -12,7 +13,9 @@ export function Header() {
       </div>
 
       <div className="flex items-center gap-2 md:gap-4 w-full sm:w-auto">
-        <SearchInput />
+        <Suspense>
+          <SearchInput />
+        </Suspense>
 
         <UserButton />
       </div>
