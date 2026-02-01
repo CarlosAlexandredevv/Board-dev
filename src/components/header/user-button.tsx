@@ -3,16 +3,23 @@
 import { Loader2Icon, LogInIcon } from 'lucide-react';
 import { authClient } from '@/lib/auth-client';
 import Image from 'next/image';
+import { usePathname, useRouter } from 'next/navigation';
 
 export function UserButton() {
   const { data: session, isPending } = authClient.useSession();
+  const router = useRouter();
+  const pathname = usePathname();
 
   async function handleSignIn() {
-    await authClient.signIn.social({ provider: 'github', callbackURL: '/' });
+    await authClient.signIn.social({
+      provider: 'github',
+      callbackURL: `${pathname}`,
+    });
   }
 
   async function handleSignOut() {
     await authClient.signOut();
+    router.refresh();
   }
 
   return (

@@ -1,4 +1,5 @@
 import { UserButton } from '@/components/header/user-button';
+import { Suspense } from 'react';
 
 export function Header() {
   return (
@@ -10,9 +11,11 @@ export function Header() {
         </p>
       </div>
 
-      <div className="flex items-center gap-4">
-        <UserButton />
-      </div>
+      <Suspense>
+        <div className="flex items-center gap-4">
+          <UserButton />
+        </div>
+      </Suspense>
     </header>
   );
 }

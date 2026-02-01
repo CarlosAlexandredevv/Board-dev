@@ -12,13 +12,13 @@ export function Header() {
         </p>
       </div>
 
-      <div className="flex items-center gap-2 md:gap-4 w-full sm:w-auto">
-        <Suspense>
+      <Suspense>
+        <div className="flex items-center gap-2 md:gap-4 w-full sm:w-auto">
           <SearchInput />
-        </Suspense>
 
-        <UserButton />
-      </div>
+          <UserButton />
+        </div>
+      </Suspense>
     </header>
   );
 }
